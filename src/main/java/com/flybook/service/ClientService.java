@@ -5,8 +5,10 @@ import com.flybook.model.dto.ClientDTO;
 import com.flybook.model.entity.Client;
 import com.flybook.repository.ClientRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class ClientService {
@@ -26,7 +28,13 @@ public class ClientService {
 
     public ClientDTO saveClient(ClientDTO clientDTO) {
         Client client = ClientMapper.INSTANCE.clientDTOToClientEntity(clientDTO);
-        return ClientMapper.INSTANCE.clientEntityToClientDTOResponse(clientRepository.save(client));
+
+        log.info("Save client {}", client);
+
+        Client save = clientRepository.save(client);
+
+        log.info("Saveed client {}", save);
+        return ClientMapper.INSTANCE.clientEntityToClientDTOResponse(save);
     }
 
     public void deleteClient(Long id) {
