@@ -1,7 +1,6 @@
 package com.flybook.controller;
 
 import com.flybook.model.dto.FlightAndDepartureDateDTO;
-import com.flybook.model.dto.ProfileDTO;
 import com.flybook.model.dto.ReservationDTO;
 import com.flybook.service.ReservationService;
 import lombok.RequiredArgsConstructor;
@@ -35,6 +34,12 @@ public class ReservationController {
     public ResponseEntity<ReservationDTO> findByFlightIdAndClientId(@PathVariable Long clientId, @PathVariable Long flightId) {
         log.info("Request to find reservation by flight id: {} and client id: {}", flightId, clientId);
         return ResponseEntity.ok(reservationService.findByFlightIdAndClientId(flightId, clientId));
+    }
+
+    @GetMapping("/flight/{flightId}")
+    public ResponseEntity<List<ReservationDTO>> findByFlightId(@PathVariable Long flightId) {
+        log.info("Request to find reservation by flight id: {}", flightId);
+        return ResponseEntity.ok(reservationService.findByFlightId(flightId));
     }
 
     @PostMapping("/count")

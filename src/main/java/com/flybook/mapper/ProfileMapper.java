@@ -9,6 +9,6 @@ import org.mapstruct.factory.Mappers;
 public interface ProfileMapper {
     ProfileMapper INSTANCE = Mappers.getMapper(ProfileMapper.class);
 
-    ProfileDTO profilEntityToProfileDTO(Profile profile);
-    Profile profilDTOToProfileEntity(ProfileDTO profileDTO);
+    ProfileDTO profileEntityToProfileDTO(Profile profile);
+    Profile profileDTOToProfileEntity(ProfileDTO profileDTO);
 }

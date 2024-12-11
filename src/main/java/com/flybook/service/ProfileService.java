@@ -14,7 +14,7 @@ public class ProfileService {
     private final ProfileRepository profileRepository;
 
     public ProfileDTO saveProfile(ProfileDTO profileDTO) {
-        Profile profile = ProfileMapper.INSTANCE.profilDTOToProfileEntity(profileDTO);
-        return ProfileMapper.INSTANCE.profilEntityToProfileDTO(profileRepository.save(profile));
+        Profile profile = ProfileMapper.INSTANCE.profileDTOToProfileEntity(profileDTO);
+        return ProfileMapper.INSTANCE.profileEntityToProfileDTO(profileRepository.save(profile));
     }
 }

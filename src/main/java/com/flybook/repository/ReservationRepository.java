@@ -11,9 +11,8 @@ import java.util.Optional;
 
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
     Optional<Reservation> findByFlight_FlightIdAndClient_Id(Long flightId, Long clientId);
-    Optional<List<Reservation>> findByFlight_FlightId(Long flightId);
+    List<Reservation> findByFlight_FlightId(Long flightId);
     int countDistinctByFlightAndDepartureDate(Flight flight, LocalDate departureDate);
     List<Reservation> findByClient_Email(String email);
     Long countAllByCreationDateIsAfter(LocalDateTime localDateTime);
-
 }
