@@ -1,4 +1,4 @@
-package com.flybook.model.dto.response;
+package com.flybook.model.dto;
 
 
 import lombok.Getter;
@@ -10,11 +10,11 @@ import java.util.List;
 
 @Getter
 @Setter
-public class ReservationDTOResponse {
+public class ReservationDTO {
     private Long id;
-    private FlightDTOResponse flightDTOResponse;
-    private ClientDTOResponse clientDTOResponse;
-    private List<ProfileDTOResponse> profileDTOResponses;
+    private FlightDTO flightDTO;
+    private ClientDTO clientDTO;
+    private List<ProfileDTO> profileDTORespons;
     private LocalDate departureDate;
     private int nbLuggage;
     private double priceOfReservation;

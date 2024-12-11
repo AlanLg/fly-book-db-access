@@ -1,9 +1,10 @@
 package com.flybook.mapper;
 
-import com.flybook.model.dto.response.AirportDTOResponse;
+import com.flybook.model.dto.AirplaneDTO;
+import com.flybook.model.dto.AirportDTO;
+import com.flybook.model.entity.Airplane;
 import com.flybook.model.entity.Airport;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 import java.util.List;
@@ -12,7 +13,6 @@ import java.util.List;
 public interface AirportMapper {
     AirportMapper INSTANCE = Mappers.getMapper(AirportMapper.class);
 
-    AirportDTOResponse airportEntityToAirportDTOResponse(Airport airport);
-
-    List<AirportDTOResponse> airportEntitiesToAirportDTOResponses(List<Airport> airports);
+    AirportDTO airportEntityToAirportDTO(Airport airport);
+    Airport airportDTOToAirportEntity(AirportDTO airportDTO);
 }

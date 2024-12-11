@@ -1,4 +1,4 @@
-package com.flybook.model.dto.response;
+package com.flybook.model.dto;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,11 +7,11 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
-public class ProfileDTOResponse {
+public class ProfileDTO {
     private Long id;
     private String firstname;
     private String lastname;
     private LocalDate birthday;
-    private ReservationDTOResponse reservationDTOResponse;
+    private ReservationDTO reservationDTO;
     private int nbLuggage;
 }

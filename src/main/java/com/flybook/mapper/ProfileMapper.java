@@ -1,6 +1,6 @@
 package com.flybook.mapper;
 
-import com.flybook.model.dto.response.ProfileDTOResponse;
+import com.flybook.model.dto.ProfileDTO;
 import com.flybook.model.entity.Profile;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
@@ -9,6 +9,6 @@ import org.mapstruct.factory.Mappers;
 public interface ProfileMapper {
     ProfileMapper INSTANCE = Mappers.getMapper(ProfileMapper.class);
 
-
-    ProfileDTOResponse profilEntityToProfileDTOResponse(Profile profile);
+    ProfileDTO profilEntityToProfileDTO(Profile profile);
+    Profile profilDTOToProfileEntity(ProfileDTO profileDTO);
 }
