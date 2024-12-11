@@ -27,14 +27,14 @@ public class ClientController {
         return ResponseEntity.ok(clientService.findByEmail(email));
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/id/{id}")
     public ResponseEntity<Void> deleteClient(@PathVariable Long id) {
         log.info("Request to delete client by id: {}", id);
         clientService.deleteClient(id);
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping("/save")
+    @PostMapping("/")
     public ResponseEntity<ClientDTO> saveClient(@RequestBody ClientDTO clientDTO) {
         log.info("Request to save client: {}", clientDTO);
         return ResponseEntity.ok(clientService.saveClient(clientDTO));

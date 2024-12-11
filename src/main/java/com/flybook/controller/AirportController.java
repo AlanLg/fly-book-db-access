@@ -24,7 +24,7 @@ public class AirportController {
         return ResponseEntity.ok(airportService.findById(id));
     }
 
-    @GetMapping("/all")
+    @GetMapping("/")
     public ResponseEntity<List<AirportDTO>> findAll() {
         log.info("Request to find all airports");
         return ResponseEntity.ok(airportService.findAll());
@@ -36,14 +36,14 @@ public class AirportController {
         return ResponseEntity.ok(airportService.findByAirportName(airportName));
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/id/{id}")
     public ResponseEntity<Void> deleteAirport(@PathVariable Long id) {
         log.info("Request to delete airport by id: {}", id);
         airportService.deleteAirport(id);
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping("/save")
+    @PostMapping("/")
     public ResponseEntity<AirportDTO> saveAirport(@RequestBody AirportDTO airportDTO) {
         log.info("Request to save airport: {}", airportDTO);
         return ResponseEntity.ok(airportService.saveAirport(airportDTO));

@@ -25,20 +25,20 @@ public class FlightController {
         return ResponseEntity.ok(flightService.findById(id));
     }
 
-    @GetMapping("/all")
+    @GetMapping("/")
     public ResponseEntity<List<FlightDTO>> findAll() {
         log.info("Request to find all flights");
         return ResponseEntity.ok(flightService.findAll());
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/id/{id}")
     public ResponseEntity<Void> deleteFlight(@PathVariable Long id) {
         log.info("Request to delete flight by id: {}", id);
         flightService.deleteFlight(id);
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping("/save")
+    @PostMapping("/")
     public ResponseEntity<FlightDTO> saveFlight(@RequestBody FlightDTO flightDTO) {
         log.info("Request to save flight: {}", flightDTO);
         return ResponseEntity.ok(flightService.saveFlight(flightDTO));

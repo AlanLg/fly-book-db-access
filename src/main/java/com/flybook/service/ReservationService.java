@@ -36,4 +36,11 @@ public class ReservationService {
     public Integer countDistinctByFlightAndDepartureDate(FlightAndDepartureDateDTO flightAndDepartureDateDTO) {
         return reservationRepository.countDistinctByFlightAndDepartureDate(FlightMapper.INSTANCE.flightDTOToFlightEntity(flightAndDepartureDateDTO.getFlightDTO()), flightAndDepartureDateDTO.getDepartureDate());
     }
+
+    public List<ReservationDTO> findByClientEmail(String clientEmail) {
+        return reservationRepository.findByClient_Email(clientEmail)
+                .stream()
+                .map(ReservationMapper.INSTANCE::reservationEntityToReservationDTO)
+                .toList();
+    }
 }

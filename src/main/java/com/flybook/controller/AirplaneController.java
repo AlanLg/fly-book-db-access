@@ -27,13 +27,13 @@ public class AirplaneController {
         return ResponseEntity.ok(airplaneService.findByBrandAndModel(brand, model));
     }
 
-    @PostMapping("/save")
+    @PostMapping("/")
     public ResponseEntity<AirplaneDTO> saveAirplane(@RequestBody AirplaneDTO airplaneDTO) {
         log.info("Request to save airplane: {}", airplaneDTO);
         return ResponseEntity.ok(airplaneService.saveAirplane(airplaneDTO));
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/id/{id}")
     public ResponseEntity<AirplaneDTO> deleteAirplane(@PathVariable Long id) {
         log.info("Request to delete airplane by id: {}", id);
         airplaneService.deleteAirplane(id);
