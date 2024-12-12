@@ -34,7 +34,7 @@ public class ClientController {
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public ResponseEntity<ClientDTO> saveClient(@RequestBody ClientDTO clientDTO) {
         log.info("Request to save client: {}", clientDTO);
         return ResponseEntity.ok(clientService.saveClient(clientDTO));

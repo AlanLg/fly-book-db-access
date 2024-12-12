@@ -18,7 +18,7 @@ public class ReservationController {
 
     private final ReservationService reservationService;
 
-    @PostMapping("/")
+    @PostMapping("")
     public ResponseEntity<ReservationDTO> saveReservation(@RequestBody ReservationDTO reservationDTO) {
         log.info("Request to save profile: {}", reservationDTO);
         return ResponseEntity.ok(reservationService.saveReservation(reservationDTO));

@@ -27,7 +27,7 @@ public class AirplaneController {
         return ResponseEntity.ok(airplaneService.findByBrandAndModel(brand, model));
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public ResponseEntity<AirplaneDTO> saveAirplane(@RequestBody AirplaneDTO airplaneDTO) {
         log.info("Request to save airplane: {}", airplaneDTO);
         return ResponseEntity.ok(airplaneService.saveAirplane(airplaneDTO));

@@ -24,7 +24,7 @@ public class AirportController {
         return ResponseEntity.ok(airportService.findById(id));
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity<List<AirportDTO>> findAll() {
         log.info("Request to find all airports");
         return ResponseEntity.ok(airportService.findAll());
@@ -43,7 +43,7 @@ public class AirportController {
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public ResponseEntity<AirportDTO> saveAirport(@RequestBody AirportDTO airportDTO) {
         log.info("Request to save airport: {}", airportDTO);
         return ResponseEntity.ok(airportService.saveAirport(airportDTO));

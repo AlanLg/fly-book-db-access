@@ -25,7 +25,7 @@ public class FlightController {
         return ResponseEntity.ok(flightService.findById(id));
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity<List<FlightDTO>> findAll() {
         log.info("Request to find all flights");
         return ResponseEntity.ok(flightService.findAll());
@@ -38,7 +38,7 @@ public class FlightController {
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public ResponseEntity<FlightDTO> saveFlight(@RequestBody FlightDTO flightDTO) {
         log.info("Request to save flight: {}", flightDTO);
         return ResponseEntity.ok(flightService.saveFlight(flightDTO));
